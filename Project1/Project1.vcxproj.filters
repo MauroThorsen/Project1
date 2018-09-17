@@ -14,4 +14,15 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="马踏棋盘.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="约瑟夫环.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="多项式.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
 </Project>
