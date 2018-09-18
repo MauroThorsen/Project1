@@ -147,6 +147,9 @@
     <ClCompile Include="约瑟夫环.c" />
     <ClCompile Include="马踏棋盘.c" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="unistd.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
