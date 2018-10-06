@@ -24,6 +24,9 @@
     <ClCompile Include="多项式.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="二路归并.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="unistd.h">

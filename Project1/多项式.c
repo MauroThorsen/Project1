@@ -7,18 +7,7 @@
 //struct number a[100];
 //int quicksort(int t)
 //{
-//	struct number  m;
-//	a[t] = a[0];
-//	int low, high;
-//	low = 0;
-//	high = t - 1;
-//	while (low != high)
-//	{
-//		if (a[low].bbb < a[t].bbb)
-//		{
-//
-//		}
-//	}
+//	
 //}
 //main()
 //{
