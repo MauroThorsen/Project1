@@ -18,13 +18,10 @@
     <ClCompile Include="马踏棋盘.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="约瑟夫环.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="多项式.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="二路归并.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="测试.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

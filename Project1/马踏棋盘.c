@@ -30,7 +30,8 @@ step chack[64];//栈
 
 int chack_in(int x)
 {
-	chack[x].nextstep_number = site(x);
+	if (chack[x + 1].x == -1)
+		chack[x].nextstep_number = site(x);//出栈后再次进栈无法判定位置
 	if (chack[x].nextstep_number == 0)
 		return -1;
 	chack[x + 1].x = chack[x].nextstep[0].x;
@@ -43,50 +44,50 @@ int site(int sit)//判定位置
 	int a = 0;
 	if ((chack[sit].x - 1) >= 0 && (chack[sit].y - 2) >= 0 && checkboard[chack[sit].x - 1][chack[sit].y - 2] != 1)
 	{
-		chack[sit].nextstep[0].x = chack[sit].x - 1;
-		chack[sit].nextstep[0].y = chack[sit].y - 2;
+		chack[sit].nextstep[a].x = chack[sit].x - 1;
+		chack[sit].nextstep[a].y = chack[sit].y - 2;
 		a++;
 	}
 	if ((chack[sit].x + 1) < 8 && (chack[sit].y - 2) >= 0 && checkboard[chack[sit].x + 1][chack[sit].y - 2] != 1)
 	{
-		chack[sit].nextstep[0].x = chack[sit].x + 1;
-		chack[sit].nextstep[0].y = chack[sit].y - 2;
+		chack[sit].nextstep[a].x = chack[sit].x + 1;
+		chack[sit].nextstep[a].y = chack[sit].y - 2;
 		a++;
 	}
 	if ((chack[sit].x - 2) >= 0 && (chack[sit].y - 1) >= 0 && checkboard[chack[sit].x - 2][chack[sit].y - 1] != 1)
 	{
-		chack[sit].nextstep[0].x = chack[sit].x - 2;
-		chack[sit].nextstep[0].y = chack[sit].y - 1;
+		chack[sit].nextstep[a].x = chack[sit].x - 2;
+		chack[sit].nextstep[a].y = chack[sit].y - 1;
 		a++;
 	}
 	if ((chack[sit].x + 2) < 8 && (chack[sit].y - 1) >= 0 && checkboard[chack[sit].x + 2][chack[sit].y - 1] != 1)
 	{
-		chack[sit].nextstep[0].x = chack[sit].x + 2;
-		chack[sit].nextstep[0].y = chack[sit].y - 1;
+		chack[sit].nextstep[a].x = chack[sit].x + 2;
+		chack[sit].nextstep[a].y = chack[sit].y - 1;
 		a++;
 	}
 	if ((chack[sit].x - 2) >= 0 && (chack[sit].y + 1) <= 0 && checkboard[chack[sit].x - 2][chack[sit].y + 1] != 1)
 	{
-		chack[sit].nextstep[0].x = chack[sit].x - 2;
-		chack[sit].nextstep[0].y = chack[sit].y + 1;
+		chack[sit].nextstep[a].x = chack[sit].x - 2;
+		chack[sit].nextstep[a].y = chack[sit].y + 1;
 		a++;
 	}
 	if ((chack[sit].x + 2) < 8 && (chack[sit].y + 1) < 8 && checkboard[chack[sit].x + 2][chack[sit].y + 1] != 1)
 	{
-		chack[sit].nextstep[0].x = chack[sit].x + 2;
-		chack[sit].nextstep[0].y = chack[sit].y + 1;
+		chack[sit].nextstep[a].x = chack[sit].x + 2;
+		chack[sit].nextstep[a].y = chack[sit].y + 1;
 		a++;
 	}
-	if ((chack[sit].x - 1) >= 0 && (chack[sit].y + 2) < 8&& checkboard[chack[sit].x - 1][chack[sit].y + 2] != 1)
+	if ((chack[sit].x - 1) >= 0 && (chack[sit].y + 2) < 8 && checkboard[chack[sit].x - 1][chack[sit].y + 2] != 1)
 	{
-		chack[sit].nextstep[0].x = chack[sit].x - 1;
-		chack[sit].nextstep[0].y = chack[sit].y + 2;
+		chack[sit].nextstep[a].x = chack[sit].x - 1;
+		chack[sit].nextstep[a].y = chack[sit].y + 2;
 		a++;
 	}
 	if ((chack[sit].x + 1) < 8 && (chack[sit].y + 2) < 8 && checkboard[chack[sit].x + 1][chack[sit].y + 2] != 1)
 	{
-		chack[sit].nextstep[0].x = chack[sit].x + 1;
-		chack[sit].nextstep[0].y = chack[sit].y + 2;
+		chack[sit].nextstep[a].x = chack[sit].x + 1;
+		chack[sit].nextstep[a].y = chack[sit].y + 2;
 		a++;
 	}
 	return a;
@@ -96,12 +97,16 @@ void initalization()//棋盘初始化
 	for (int a = 0; a < 8; a++)
 		for (int b = 0; b < 8; b++)
 			checkboard[b][a] = 0;
+	for (int a = 0; a < 64; a++)
+	{
+		chack[a].x = -1;
+		chack[a].y = -1;
+	}
 }
 void chack_out(int a)
 {
 	checkboard[chack[a].x][chack[a].y] = 0;
-	site(a);
-	for (int i = 0; i < chack[a].nextstep_number - 1; i++)
+	for (int i = 0; i <= chack[a].nextstep_number - 1; i++)
 	{
 		chack[a].nextstep[i].x = chack[a].nextstep[i + 1].x;
 		chack[a].nextstep[i].y = chack[a].nextstep[i + 1].y;
@@ -146,3 +151,4 @@ main()
 		
 	system("pause");
 }
+
