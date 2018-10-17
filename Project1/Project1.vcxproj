@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="google2011面试.c" />
     <ClCompile Include="二路归并.c" />
     <ClCompile Include="测试.c" />
     <ClCompile Include="马踏棋盘.c" />

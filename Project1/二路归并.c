@@ -1,108 +1,55 @@
-//#include <stdio.h>
-//main()
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#define Depth 8
+//void merge(int a[], int b)
 //{
-//	int a[1000];
-//	int x = 0;
-//	int aaa;
-//	while (scanf_s("%d", &a[x++]))
-//	{ }
-//	x--;
-//	/*for (int i = 0; i < x; i++)
-//		printf("%d\t", a[i]);*/
-//    //检测函数
-//	if (x % 2 != 0)
-//	{
-//		aaa = a[x];
-//		x--;
-//	}
 //
-//	system("pause");
 //}
-
-
-
-
-
-
-
-
-
-
-
-
-
-//#include<stdio.h>
-//#include<stdlib.h>
-//#include<string.h>
-//typedef struct {
-//	int d;
-//	int pw;
-//	struct node *n;
-//	struct node *f;
-//}Int, *link;
-//link creat(int n)
+//void divide(int a[],int b)
 //{
-//	link L;
-//	L = (link)malloc(sizeof(Int));
-//	int i;
-//	Int *r, *p;
-//	L->n = NULL;
-//	L->d = 1;
-//	scanf("%d", &L->pw);
-//	r = L;
-//	for (i = 2; i <= n; i++)
-//	{
-//		p = (link)malloc(sizeof(Int));
-//		p->d = i;
-//		scanf("%d", &p->pw);
-//		p->n = NULL;
-//		p->f= r;
-//		r->n = p;
-//		r = p;
-//	}
-//	p->n = L;
-//	L->f = p;
-//	return L;
+//	if (b != 2)
+//		divide(a, b / 2);
+//	merge(a, b);
 //}
-//int delate(link L, int n, int m)
-//{
-//	Int *p, *q, *t;
-//	int i, k;
-//	if (n == 0)
-//		return 0;
-//	p = t = L;
-//	if (m < 0)
-//		m = n;
-//	for (i = 1; i <= m; i++)
-//	{
-//		q = p->f;
-//		t = q->n;
-//		p = p->n;
-//	}
-//	q->n = p;
-//	p->f = q;
-//	k = t->pw;
-//	printf("%d ", t->d);
-//	free(t);
-//	n--;
-//	if (n == 0)
-//		return 0;
-//	L = p;
-//	delate(L, n, k);
-//}
-//void fun()
-//{
-//	int n, m;
-//	link L;
-//	scanf("%d", &n);
-//	scanf("%d", &m);
-//	L = creat(n);
-//	delate(L, n, m);
-//}
-//int main()
-//{
-//	fun();
-//}
+//为什么不直接定义二叉树，在二叉树中操作
+ struct data
+{
+	int a;
+	struct data* next;
+};
+ typedef struct data data;
+typedef struct full_binary_tree
+{
+	data *Data;
+	int depth;
+	struct full_binary_tree *left, *right, *father;
+}full_binary_tree;
+
+full_binary_tree creat()
+{
+	data *p;
+	int i = 1, n;
+	while (i <= Depth)
+	{
+		n = pow(2, Depth - i);
+		p = malloc(sizeof(data));
+	}
+}
+main()
+{
+	full_binary_tree A;
+    system("pause");
+}
+
+
+
+
+
+
+
+
+
 
 
 
